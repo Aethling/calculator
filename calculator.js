@@ -16,7 +16,7 @@ $(document).ready(function(){
 			num1 = '';
 			num2 = '';
 			lastNum = '';
-		} else if (text == '+' || text == '-' || text == '*' || text == '/') {
+		} else if (/\+|\-|\*|\//.test(text)) {
 			op = text;
 			num2 = num1;
 			num1 = '';
