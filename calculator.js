@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	var num1 = '';
 	var num2 = '';
-	var op = ''
+	var op = '';
 	$("button").on("click", function(){
 		var text = $(this).text();
 		if (text == 'C') {
@@ -9,7 +9,6 @@ $(document).ready(function(){
 			num1 = '';
 			num2 = '';
 		} else if (text == '+' || text == '-' || text == '*' || text == '/') {
-			// $(".well").empty()
 			op = text;
 			num2 = num1;
 			num1 = '';
@@ -26,18 +25,19 @@ $(document).ready(function(){
 		var solution = '';
 		switch(op) {
 			case "+":
-			solution = num1 + num2;
+			solution = num2 + num1;
 				break
 			case "-":
 			solution = num2 - num1;
 				break
 			case "*":
-			solution = num1 * num2;
+			solution = num2 * num1;
 				break
 			case "/":
 			solution = num2 / num1; 
 		}
-		console.log(solution);
 		$(".well").text(solution);
+		num1 = solution;
+		num2 = '';
 	}
 }) //end document.ready
