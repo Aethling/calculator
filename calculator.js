@@ -2,22 +2,21 @@ $(document).ready(function(){
 
 	var num1 = '';
 	var num2 = '';
-	var lastNum;
 	var op = '';
-function start(lastNum) {
+	var lastNum = '';
+
 	$("button").on("click", function(){
 		var text = $(this).text();
-		evaluateInput(text, lastNum);
+		evaluateInput(text);
 	});
-}
-	function evaluateInput(text, lastNum) {
+
+	function evaluateInput(text) {
 		if (text == 'C') {
 			$(".well").empty()
 			num1 = '';
 			num2 = '';
 			lastNum = '';
 		} else if (text == '+' || text == '-' || text == '*' || text == '/') {
-			// $(".well").empty()
 			op = text;
 			num2 = num1;
 			num1 = '';
@@ -56,7 +55,6 @@ function start(lastNum) {
 		lastNum = solution;
 		num1 = "";
 		num2 = "";
-		start(lastNum);
 	}
-start();
+
 }) //end document.ready
